@@ -22,6 +22,11 @@
   display: none;
   padding: 50px;
   text-align: center;
+  height: 600px; /* Reduced from 1200px to be "not that tall" */
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically */
+  align-items: center;     /* Centers text horizontally */
 }
 
 /* Style each tab content individually */
@@ -29,3 +34,10 @@
 #Paris {background-color:green;}
 #Tokyo {background-color:blue;}
 #Oslo {background-color:orange;}
+
+body {
+    max-width: 375px;    
+    margin: 20px auto;  
+    background-color: white;
+    border: 1px solid #ddd;
+}
