@@ -13,7 +13,20 @@ function openCity(cityName, elmnt, color) {
   }
 
   // Show the specific tab content
-  document.getElementById(cityName).style.display = "block";
+  var target = document.getElementById(cityName);
+  target.style.display = "block";
+
+  if (cityName === 'Colors' && target.innerHTML === "") {
+    fetch('tab3.html')
+      .then(response => response.text())
+      .then(html => {
+        target.innerHTML = html
+        var oldScript = target.querySelector('script')
+        var newScript = document.createElement('script')
+        newScript.text = oldScript.innerHTML
+        document.body.appendChild(newScript)
+      })
+  }
 
   // Add the specific color to the button used to open the tab content
   elmnt.style.backgroundColor = color;
