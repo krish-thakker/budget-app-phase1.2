@@ -7,8 +7,8 @@
   outline: none;
   cursor: pointer;
   padding: 14px 2px;
-  font-size: 14px;
-  width: 20%;
+  font-size: 12px;
+  width: 16%;
   box-sizing: border-box;
 }
 
@@ -66,4 +66,27 @@ body {
   text-align: center; 
   font-weight: bold; 
   padding: 5px 0; 
+}
+
+
+#Profile { background-color: #f4c2c2; }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-top: 15px;
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
 }

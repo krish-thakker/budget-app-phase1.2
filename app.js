@@ -16,16 +16,19 @@ function openCity(cityName, elmnt, color) {
   var target = document.getElementById(cityName);
   target.style.display = "block";
 
-  if (cityName === 'Colors' && target.innerHTML === "") {
-    fetch('tab3.html')
+  if ((cityName === 'Colors' || cityName === 'Profile') && target.innerHTML === "") {
+    var fileName = (cityName === 'Colors') ? 'tab3.html' : 'tab4.html';
+    fetch(fileName)
       .then(response => response.text())
       .then(html => {
-        target.innerHTML = html
-        var oldScript = target.querySelector('script')
-        var newScript = document.createElement('script')
-        newScript.text = oldScript.innerHTML
-        document.body.appendChild(newScript)
-      })
+        target.innerHTML = html;
+        var scripts = target.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          var newScript = document.createElement('script');
+          newScript.text = oldScript.innerHTML;
+          document.body.appendChild(newScript);
+        });
+      });
   }
 
   // Add the specific color to the button used to open the tab content
