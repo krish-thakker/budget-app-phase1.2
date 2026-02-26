@@ -1,0 +1,19 @@
+<h1 style="color: black; text-align: center;">-User Profile-</h1>
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+  <img src="smile.png" 
+       alt="Profile" 
+       onclick="showWarning()" 
+       style="cursor: pointer; width: 150px;">
+  <p style="font-weight: bold; color: black; margin-top: 10px;">Smiley J. Smile</p>
+</div>
+
+<div id="warningBox" class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Warning!</strong> Do not click on the profile image.
+</div>
+
+<script>
+  function showWarning() {
+    document.getElementById('warningBox').style.display = 'block';
+  }
+</script>
