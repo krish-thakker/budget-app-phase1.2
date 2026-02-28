@@ -16,28 +16,6 @@ function openCity(cityName, elmnt, color) {
   var target = document.getElementById(cityName);
   target.style.display = "block";
 
-  /*
-  // List of tabs that need to load from external files
-  const externalTabs = ['Colors', 'Profile', 'Choices'];
-
-  if (externalTabs.includes(cityName) && target.innerHTML === "") {
-    // Maps the tab ID to the filename (e.g., Choices -> tab5.html)
-    const fileMap = { 'Colors': 'tab3.html', 'Profile': 'tab4.html', 'Choices': 'tab5.html' };
-    
-    fetch(fileMap[cityName])
-      .then(response => response.text())
-      .then(html => {
-        target.innerHTML = html;
-        var scripts = target.querySelectorAll('script');
-        scripts.forEach(oldScript => {
-          var newScript = document.createElement('script');
-          newScript.text = oldScript.innerHTML;
-          document.body.appendChild(newScript);
-        });
-      });
-  }
-  */
-
   // List of tabs that load from other files
   const externalTabs = ['Colors', 'Profile', 'Choices', 'ToDo'];
 
