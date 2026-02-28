@@ -17,9 +17,14 @@ function openCity(cityName, elmnt, color) {
   target.style.display = "block";
 
   /*
-  if ((cityName === 'Colors' || cityName === 'Profile') && target.innerHTML === "") {
-    var fileName = (cityName === 'Colors') ? 'tab3.html' : 'tab4.html';
-    fetch(fileName)
+  // List of tabs that need to load from external files
+  const externalTabs = ['Colors', 'Profile', 'Choices'];
+
+  if (externalTabs.includes(cityName) && target.innerHTML === "") {
+    // Maps the tab ID to the filename (e.g., Choices -> tab5.html)
+    const fileMap = { 'Colors': 'tab3.html', 'Profile': 'tab4.html', 'Choices': 'tab5.html' };
+    
+    fetch(fileMap[cityName])
       .then(response => response.text())
       .then(html => {
         target.innerHTML = html;
@@ -33,17 +38,24 @@ function openCity(cityName, elmnt, color) {
   }
   */
 
-  // List of tabs that need to load from external files
+  // List of tabs that load from other files
   const externalTabs = ['Colors', 'Profile', 'Choices'];
 
-  if (externalTabs.includes(cityName) && target.innerHTML === "") {
-    // Maps the tab ID to the filename (e.g., Choices -> tab5.html)
-    const fileMap = { 'Colors': 'tab3.html', 'Profile': 'tab4.html', 'Choices': 'tab5.html' };
+  if (externalTabs.includes(cityName)) {
+    // We define which file goes with which tab
+    const fileMap = { 
+      'Colors': 'tab3.html', 
+      'Profile': 'tab4.html', 
+      'Choices': 'tab5.html' 
+    };
     
+    // We ALWAYS fetch so the content stays fresh and doesn't break
     fetch(fileMap[cityName])
       .then(response => response.text())
       .then(html => {
         target.innerHTML = html;
+        
+        // This part is CRITICAL: it re-runs the "Print" button logic
         var scripts = target.querySelectorAll('script');
         scripts.forEach(oldScript => {
           var newScript = document.createElement('script');

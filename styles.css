@@ -127,3 +127,73 @@ iframe {
    border: none;
 }
 
+
+/* tab 5 Styles */
+#Choices {
+  background-color: greenyellow;
+  color: black;
+  padding: 18px 14px;
+  box-sizing: border-box;
+  text-align: left;
+  display: block; /* Overrides the 'flex' default to allow left alignment */
+}
+
+#Choices h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 40px;
+  margin: 0 0 22px 0;
+  font-weight: 800;
+}
+
+.choices-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  margin: 0 0 8px 0;
+}
+
+.choices-block {
+  margin-bottom: 26px;
+}
+
+.choices-option {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.choices-option input {
+  transform: scale(1.25);
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+#modeSelect {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  padding: 4px 10px;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+#printBtn {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  padding: 10px 16px;
+  border: 2px solid #444;
+  background-color: #d9d9d9;
+  box-shadow: 2px 2px 0 #777;
+  cursor: pointer;
+}
+
+#outputText {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
