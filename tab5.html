@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>Tab 5</title>
+</head>
+
+<body>
+  <div id="Choices" class="tabcontent" style="display:block;">
+    <h1>-Choices Screen-</h1>
+
+    <div class="choices-block">
+      <div class="choices-heading">Study Mode #1:</div>
+
+      <label class="choices-option">
+        <input type="radio" name="mode1" value="Pomodoro" checked>
+        Pomodoro
+      </label>
+
+      <label class="choices-option">
+        <input type="radio" name="mode1" value="Deep Focus">
+        Deep Focus
+      </label>
+    </div>
+
+    <div class="choices-block">
+      <div class="choices-heading">Study Mode #2:</div>
+
+      <select id="modeSelect">
+        <option value="Pomodoro">Pomodoro</option>
+        <option value="Deep Focus">Deep Focus</option>
+      </select>
+    </div>
+
+    <div class="button-wrapper">
+      <button id="printBtn" type="button">
+        Print something<br>
+        based on above<br>
+        choices...
+      </button>
+    </div>
+
+    <p id="outputText"></p>
+  </div>
+
+  <script>
+    document.getElementById("printBtn").addEventListener("click", function() {
+      const choice1 = document.querySelector('input[name="mode1"]:checked').value;
+      const choice2 = document.getElementById("modeSelect").value;
+
+      document.getElementById("outputText").textContent =
+        "Mode #1: " + choice1 + " | Mode #2: " + choice2;
+    });
+  </script>
+</body>
+</html>
