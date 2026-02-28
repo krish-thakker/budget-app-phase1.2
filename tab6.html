@@ -1,0 +1,40 @@
+<h2 style="color: black;">-To Do List-</h2>
+<div style="margin-bottom: 10px; display: flex; gap: 5px; justify-content: center;">
+  <input type="text" id="myInput" placeholder="New entry..." style="padding: 5px;">
+  <button onclick="newElement()" style="padding: 5px 10px;">Add</button>
+</div>
+
+<ul id="myUL">
+  <li>Register for classes<span class="close">×</span></li>
+  <li class="checked">Start Phase 1.1.1<span class="close">×</span></li>
+</ul>
+
+<script>
+  // Ensure the close button logic works every time the tab is loaded
+  document.getElementById("myUL").onclick = function(ev) {
+    if (ev.target.className === 'close') {
+      ev.target.parentElement.style.display = "none";
+    } else if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  };
+
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+  }
+</script>

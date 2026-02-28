@@ -197,3 +197,16 @@ iframe {
   margin-top: 16px;
 }
 
+#ToDo { 
+  background-color: #add8e6;
+  align-items: stretch; 
+  justify-content: flex-start; 
+  padding: 20px;
+}
+#myUL { list-style-type: none; padding: 0; margin: 0; width: 100%; }
+#myUL li { cursor: pointer; padding: 12px; background: #eee; color: #333; transition: 0.2s; display: flex; justify-content: space-between; }
+#myUL li:nth-child(odd) { background: #f9f9f9; }
+#myUL li:hover { background: #ddd; }
+#myUL li.checked { background: #888; color: #fff; text-decoration: line-through; }
+.close { padding: 0 10px; }
+.close:hover { background-color: #f44336; color: white; }

@@ -39,14 +39,15 @@ function openCity(cityName, elmnt, color) {
   */
 
   // List of tabs that load from other files
-  const externalTabs = ['Colors', 'Profile', 'Choices'];
+  const externalTabs = ['Colors', 'Profile', 'Choices', 'ToDo'];
 
   if (externalTabs.includes(cityName)) {
     // We define which file goes with which tab
     const fileMap = { 
       'Colors': 'tab3.html', 
       'Profile': 'tab4.html', 
-      'Choices': 'tab5.html' 
+      'Choices': 'tab5.html',
+      'ToDo': 'tab6.html'
     };
     
     // We ALWAYS fetch so the content stays fresh and doesn't break
