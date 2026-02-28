@@ -37,3 +37,67 @@ function openCity(cityName, elmnt, color) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+function initToDoList() {
+  // Create a "close" button and add it to each list item
+  var myNodelist = document.querySelectorAll("#myUL li");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    // Check if close button already exists
+    if (myNodelist[i].getElementsByClassName("close").length === 0) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+    }
+  }
+
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.getElementById('myUL');
+  if (list && !list.getAttribute('data-init')) {
+    list.addEventListener('click', function(ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+    list.setAttribute('data-init', 'true');
+  }
+}
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  var close = document.getElementsByClassName("close");
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
