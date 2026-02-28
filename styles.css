@@ -49,6 +49,92 @@ body {
     position: relative; 
 }
 
+/* List container */
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+/* List items */
+#myUL li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #a7ebfb;
+  font-size: 20px;
+  transition: 0.2s;
+  
+}
+
+/* Hover effect */
+#myUL li:hover {
+  background: #ffffff;
+}
+
+/* Checked state */
+#myUL li.checked {
+  background: #f99191;
+  color: #8affcc;
+  text-decoration: line-through;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Header style - scoped to the ID used in tab6 */
+#myDIV.header {
+  background-color: #fcb62b;
+  padding: 30px 40px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+#myDIV.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Input style */
+#myInput {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Add button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #a7ebfb;
+  color: #000000;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #03bbd3;
+}
+
 /* Position the specific text in the corner */
 .bottom-right-text {
     position: absolute;
